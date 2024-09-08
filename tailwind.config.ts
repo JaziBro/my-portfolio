@@ -9,10 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'primary-400': '#3490dc',
-        'secondary-600': '#e3342f',
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: '#1F2937',  // Dark Navy
+        secondary: '#3B82F6',  // Indigo
+        accent: '#F59E0B',  // Amber
+        background: '#111827',  // Dark Gray
+        text: '#E5E7EB',  // Light Gray
+        textPrimary: '#1F2937'
       },
     },
   },

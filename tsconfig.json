@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/HeroSection.jsx", "src/app/components/EmailSection.jsx", "src/app/components/Footer.jsx", "src/app/components/AboutSection.jsx", "src/app/components/AchievementsSection.jsx", "src/app/components/Navbar.jsx", "src/app/components/NavLink.jsx", "src/app/components/TabButton.jsx", "src/app/components/ProjectTag.jsx", "src/app/components/MenuOverlay.jsx", "src/app/components/ProjectsSection.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/HeroSection.tsx", "src/app/components/EmailSection.tsx", "src/app/components/Footer.tsx", "src/app/components/AboutSection.tsx", "src/app/components/AchievementsSection.tsx", "src/app/components/Navbar.tsx", "src/app/components/NavLink.tsx", "src/app/components/TabButton.tsx", "src/app/components/ProjectTag.tsx", "src/app/components/MenuOverlay.tsx", "src/app/components/ProjectsSection.tsx", "src/app/components/ProjectCard.tsx"],
   "exclude": ["node_modules"]
 }
