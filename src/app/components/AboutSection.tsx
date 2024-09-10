@@ -65,7 +65,7 @@ const AboutSection = () => {
           <p className="text-base lg:text-lg">
             I am a full stack web developer passionate about creating
             interactive and responsive web applications. Skilled in TypeScript,
-            React, Next.js, PostgreSQL, FastAPI, HTML, CSS, and Git, I focus on
+            React, Next.js, TailwindCSS, PostgreSQL and FastAPI I focus on
             delivering seamless user experiences through clean, efficient code.
             I am a quick learner, always eager to enhance my knowledge and stay
             current with new technologies. I enjoy tackling complex challenges
