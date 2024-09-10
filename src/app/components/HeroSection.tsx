@@ -1,69 +1,78 @@
 "use client";
+import React from "react";
+import Image from "next/image";
+import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
 
-const navLinks = [
-  {
-    title: "About",
-    path: "#about",
-  },
-  {
-    title: "Projects",
-    path: "#projects",
-  },
-  {
-    title: "Contact",
-    path: "#contact",
-  },
-];
-
-const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
-
+const HeroSection: React.FC = () => {
   return (
-    <nav className="bg-primary text-textPrimary fixed w-full z-20 top-0 start-0 border-b border-gray-700">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link href="/" className="flex items-center space-x-3">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-            MyPortfolio
-          </span>
-        </Link>
-        <div className="flex md:order-2 space-x-3">
-          <button
-            type="button"
-            className="text-white bg-accent hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
+    <section className="lg:py-16 bg-background">
+      <div className="grid grid-cols-1 sm:grid-cols-12">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+        >
+          <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
+            Hello, I&apos;m{" "}
+            <br />
+            <TypeAnimation
+              sequence={[
+                "Jazil",
+                1000,
+                "Web Developer",
+                1000,
+                "Mobile Developer",
+                1000,
+                "UI/UX Designer",
+                1000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </h1>
+          <p className="text-textSecondary text-base sm:text-lg mb-6 lg:text-xl">
+            Building dynamic and responsive websites with a focus on performance and user experience.
+          </p>
+        
+
+          <Link
+            href="/#contact"
+            className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary to-secondary hover:scale-110 text-white"
           >
             Hire Me
-          </button>
-          <button
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-            onClick={() => setNavbarOpen(!navbarOpen)}
+          </Link>
+          <Link
+            href="/"
+            className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary to-secondary text-white mt-3 hover:scale-110"
           >
-            {navbarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
-        <div
-          className={`${
-            navbarOpen ? "block" : "hidden"
-          } items-center justify-between w-full md:flex md:w-auto`}
+          <span className="block bg-background rounded-full px-5 py-2">
+            Download CV
+          </span>
+          </Link>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium bg-primary md:flex-row md:space-x-8 md:mt-0">
-            {navLinks.map((link) => (
-              <li key={link.path}>
-                <Link href={link.path}>
-                  <span className="block py-2 px-3 text-white hover:text-accent">
-                    {link.title}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <div className="rounded-full bg-gradient-to-r bg-white w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
+            <Image
+              src="/images/hero-img.png"
+              alt="hero image"
+              className="absolute  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              width={300}
+              height={300}
+            />
+          </div>
+        </motion.div>
       </div>
-    </nav>
+    </section>
   );
 };
 
-export default Navbar;
+export default HeroSection;
