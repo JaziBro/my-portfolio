@@ -9,7 +9,7 @@ const projectsData = [
     id: 1,
     title: "Portfolio Website",
     description: "A modern portfolio showcasing my projects and skills. Designed to highlight achievements and provide easy access to my work",
-    image: "/images/projects/1.png",
+    image: "/images/projects/portfolio.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/JaziBro/my-portfolio.git",
     link: "/",
