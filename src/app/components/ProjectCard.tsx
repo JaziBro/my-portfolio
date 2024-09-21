@@ -1,35 +1,63 @@
 import React from "react";
-import { Code, Eye } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { Eye, Code } from "lucide-react";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
+interface ProjectCardProps {
+  image: string;
+  title: string;
+  description: string;
+  link: string;
+  gitUrl: string;
+}
+
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+  image,
+  title,
+  description,
+  link,
+  gitUrl,
+}) => {
   return (
-    <div>
-      <div
-        className="h-52 md:h-72 rounded-t-xl relative group"
-        style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
-      >
-        <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500 ">
-          <Link
-            href={gitUrl}
-            className="h-14 w-14 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-          >
-            <Code className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white" />
+    <div className="relative group bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+      {/* Image Section */}
+      <Link href={link || "#"}>
+        <Image
+          className="rounded-t-lg"
+          src={image}
+          alt={title}
+          width={500}
+          height={300}
+          layout="responsive"
+        />
+      </Link>
+
+      {/* Content Section */}
+      <div className="p-5">
+        <Link href={link || "#"}>
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {title}
+          </h5>
+        </Link>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          {description}
+        </p>
+      </div>
+
+      {/* Hover Icons Section */}
+      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="flex space-x-6">
+          {/* Eye Icon for project preview */}
+          <Link href={link || "#"} target="_blank">
+            <Eye className="w-8 h-8 text-white hover:text-gray-300 cursor-pointer" />
           </Link>
-          <Link
-            href={previewUrl}
-            className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
-          >
-            <Eye className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white" />
+
+          {/* Code Icon for GitHub link */}
+          <Link href={gitUrl || "#"} target="_blank">
+            <Code className="w-8 h-8 text-white hover:text-gray-300 cursor-pointer" />
           </Link>
         </div>
-      </div>
-      <div className="text-white rounded-b-xl mt-3 bg-[#181818]py-6 px-4">
-        <h5 className="text-xl font-semibold mb-2">{title}</h5>
-        <p className="text-[#ADB7BE]">{description}</p>
       </div>
     </div>
   );
 };
-
-export default ProjectCard;

@@ -2,19 +2,27 @@
 import React, { useState } from "react";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
+import { FaUpwork } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
+    const target = e.target as typeof e.target & {
+      email: { value: string };
+      subject: { value: string };
+      message: { value: string };
     };
+    
+    const data = {
+      email: target.email.value,
+      subject: target.subject.value,
+      message: target.message.value,
+    };
+
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
 
@@ -56,12 +64,13 @@ const EmailSection = () => {
           try my best to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
+          <Link href="https://github.com/JaziBro">
             <Image src={GithubIcon} alt="Github Icon" />
           </Link>
-          <Link href="linkedin.com">
+          <Link href="https://www.linkedin.com/in/syed-jazil-hashmi-8859a72a2/">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
+          <FaUpwork />
         </div>
       </div>
       <div>
@@ -119,7 +128,7 @@ const EmailSection = () => {
             </div>
             <button
               type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+              className="text-white bg-gradient-to-br from-primary to-secondary focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center"
             >
               Send Message
             </button>

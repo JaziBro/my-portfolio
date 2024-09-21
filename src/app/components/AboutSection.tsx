@@ -11,11 +11,11 @@ const TAB_DATA = [
       <div>
         <h3 className="text-2xl font-semibold mb-2">Skills</h3>
         <ul className="list-disc pl-5">
-          <li>Node.js</li>
-          <li>Express</li>
+          <li>FastAPI</li>
           <li>PostgreSQL</li>
-          <li>Sequelize</li>
-          <li>JavaScript</li>
+          <li>Tailwind CSS</li>
+          <li>TypeScript</li>
+          <li>Next.Js</li>
           <li>React</li>
         </ul>
       </div>
@@ -56,8 +56,8 @@ const AboutSection = () => {
             src="/images/about-img.webp"
             alt="about-image"
             width={500}
-            height={600}
-            className="rounded-lg object-cover"
+            height={700}
+            className="rounded-lg object-cover h-full"
           />
         </div>
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full md:order-1">
