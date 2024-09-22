@@ -6,22 +6,23 @@ const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST(req) {
   const { email, subject, message } = await req.json();
-  console.log("Email is being sent to:", email);  // Log the email address
+  console.log("Email is being sent to jazilhashmi2017@gmail.com");  // Log the email address
   try {
     const data = await resend.emails.send({
       from: fromEmail,
-      to: [fromEmail, email],
+      to: ['jazilhashmi2017@gmail.com'],  // Always send to this email
       subject: subject,
       react: (
         <>
           <h1>{subject}</h1>
           <p>Thank you for contacting us!</p>
-          <p>New message submitted:</p>
+          <p>New message submitted by: {email}</p>  {/* Include the sender's email */}
+          <p>Message:</p>
           <p>{message}</p>
         </>
       ),
     });
-    console.log("Email sent successfully to:", email);  // Log when email is sent
+    console.log("Email sent successfully to jazilhashmi2017@gmail.com");  // Log when email is sent
     return NextResponse.json(data);
   } catch (error) {
     console.error("Error sending email:", error);

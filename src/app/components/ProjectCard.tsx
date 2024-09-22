@@ -19,7 +19,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   gitUrl,
 }) => {
   return (
-    <div className="relative group bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+    <div className="relative group border rounded-lg shadow bg-gray-800 border-gray-700 overflow-hidden">
       {/* Image Section */}
       <Link href={link || "#"}>
         <Image
@@ -35,11 +35,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       {/* Content Section */}
       <div className="p-5">
         <Link href={link || "#"}>
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-white ">
             {title}
           </h5>
         </Link>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p className="mb-3 font-normal text-white mt-5">
           {description}
         </p>
       </div>
@@ -49,12 +49,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="flex space-x-6">
           {/* Eye Icon for project preview */}
           <Link href={link || "#"} target="_blank">
-            <Eye className="w-8 h-8 text-white hover:text-gray-300 cursor-pointer" />
+            <Eye className="w-8 h-8 text-white cursor-pointer" />
           </Link>
 
           {/* Code Icon for GitHub link */}
           <Link href={gitUrl || "#"} target="_blank">
-            <Code className="w-8 h-8 text-white hover:text-gray-300 cursor-pointer" />
+            <Code className="w-8 h-8 text-white cursor-pointer" />
           </Link>
         </div>
       </div>

@@ -1,28 +1,70 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  darkMode: ['class'],
   content: [
     './src/**/*.{js,ts,jsx,tsx}', // Adjust the paths according to your project structure
   ],
   theme: {
     extend: {
       colors: {
-        background: '#0D1117', // Dark background
+        background: 'hsl(var(--background))',
         textPrimary: 'transparent',
-        textSecondary: '#FFFFFF', // White for secondary text
-        accent: '#F59E0B', // Amber for buttons
-        primary: '#A78BFA', // Pastel Purple for gradients
-        secondary: '#4ADE80', // Soft Green for gradients
-        grayDark: '#1F2937', // Dark gray for backgrounds
-        grayLight: '#E5E7EB', // Light gray for text
+        textSecondary: '#FFFFFF',
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))'
+        },
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))'
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))'
+        },
+        grayDark: '#1F2937', // Dark gray
+        grayLight: '#E5E7EB', // Light gray
+        foreground: 'hsl(var(--foreground))', // Light foreground
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))'
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))'
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))'
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))'
+        },
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        chart: {
+          '1': 'hsl(var(--chart-1))',
+          '2': 'hsl(var(--chart-2))',
+          '3': 'hsl(var(--chart-3))',
+          '4': 'hsl(var(--chart-4))',
+          '5': 'hsl(var(--chart-5))'
+        }
       },
-      gradientColorStops: theme => ({
+      gradientColorStops: {
         primary: '#A78BFA', // Pastel Purple for gradient text
         secondary: '#4ADE80', // Soft Green for gradient text
-      }),
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 };
 
 export default config;
