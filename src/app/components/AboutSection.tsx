@@ -28,8 +28,8 @@ const TAB_DATA = [
       <div>
         <h3 className="text-2xl font-semibold mb-2">Education</h3>
         <ul className="list-disc pl-5">
-          <li>Fullstack Academy of Code</li>
-          <li>University of California, Santa Cruz</li>
+          <li>IGCSE from Virtual Academia (2022 - 2023)</li>
+          <li>A-Levels from Virtual Academia (2024 - 2026)</li>
         </ul>
       </div>
     ),
