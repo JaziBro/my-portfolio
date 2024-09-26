@@ -59,15 +59,15 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
-          <div className="rounded-full bg-gradient-to-r bg-primary w-[450px] h-[450px] lg:w-[450px] lg:h-[450px] relative ">
-            <Image
-              src="/images/portfolio-pic.png"
-              alt="hero image"
-              className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full w-full h-full"
-              width={250}
-              height={250}
-            />
-          </div>
+        <div className="rounded-full bg-primary w-[90vw] h-[90vw] max-w-[450px] max-h-[450px] relative">
+          <Image
+            src="/images/portfolio-pic.png"
+            alt="hero image"
+            className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full w-full h-full object-cover"
+            width={250}
+            height={250}
+          />
+        </div>
         </motion.div>
       </div>
     </section>
