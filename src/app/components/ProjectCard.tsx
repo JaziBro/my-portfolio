@@ -19,7 +19,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   gitUrl,
 }) => {
   return (
-    <div className="relative group border rounded-lg shadow bg-gray-800 border-gray-700 overflow-hidden">
+    <div className="relative group border rounded-lg shadow bg-primary border-gray-700 overflow-hidden">
       {/* Image Section */}
       <Link href={link || "#"}>
         <Image
