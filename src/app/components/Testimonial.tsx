@@ -13,7 +13,6 @@ import { useRef } from "react";
 import sir_zia from "../../../public/images/sir-zia.jpg";
 import sir_qasim from "../../../public/images/sir-qasim.jpg";
 import sir_najam from "../../../public/images/sir-najam.jpg";
-// import sir_sulaiman from "../../../public/images/sir-sulaiman.jpg"
 import sir_hamzah from "../../../public/images/sir-hamzah.jpg";
 import sir_ameen from "../../../public/images/sir-ameen.jpg";
 import sir_okasha from "../../../public/images/sir-okasha.webp"
@@ -78,8 +77,9 @@ const TestimonialCard = ({
 
       {/* Testimonial Text */}
       <blockquote className="text-lg text-white/90">
-        "{testimonial.text}"
+        &ldquo;{testimonial.text}&rdquo;
       </blockquote>
+
 
       {/* Author Info */}
       <div className="flex items-center gap-4">
