@@ -19,27 +19,27 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   gitUrl,
 }) => {
   return (
-    <div className="relative group border rounded-lg shadow bg-primary border-gray-700 overflow-hidden">
+    <div className="relative group border rounded-lg shadow bg-primary border-primary/70 overflow-hidden w-80 h-full flex flex-col">
       {/* Image Section */}
       <Link href={link || "#"}>
         <Image
-          className="rounded-t-lg"
+          className="rounded-t-lg object-cover"
           src={image}
           alt={title}
           width={500}
-          height={300}
+          height={200}
           layout="responsive"
         />
       </Link>
 
       {/* Content Section */}
-      <div className="p-5">
+      <div className="p-5 flex-grow flex flex-col">
         <Link href={link || "#"}>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-white ">
             {title}
           </h5>
         </Link>
-        <p className="mb-3 font-normal text-white mt-5">
+        <p className="mb-3 font-normal text-white mt-5 overflow-auto">
           {description}
         </p>
       </div>
